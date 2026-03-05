@@ -1,0 +1,314 @@
+/* styles.css (FLAT VERSION — no shadows, no gradients) */
+:root{
+  --bg:#07080b;
+  --card:#0d1015;
+  --card2:#0b0e13;
+  --text:#eef0f6;
+  --muted:rgba(238,240,246,.65);
+  --muted2:rgba(238,240,246,.45);
+  --line:rgba(255,255,255,.10);
+  --line2:rgba(255,255,255,.16);
+  --accent:#f7c645;
+  --radius:18px;
+  --max:1120px;
+}
+
+*{
+  box-sizing:border-box;
+  box-shadow:none !important;
+  text-shadow:none !important;
+}
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: var(--bg); /* flat background */
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; }
+
+.wrap{
+  max-width:2100px;
+  margin:0 auto;
+  padding:22px 18px 70px;
+}
+
+/* ===== Top Nav ===== */
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 2px 28px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  letter-spacing:.2px;
+  color:rgba(255,255,255,.92);
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:var(--accent);
+}
+
+.navLinks{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-size:13px;
+  color:rgba(238,240,246,.65);
+}
+
+.navLinks a{
+  padding:8px 10px;
+  border-radius:999px;
+  transition: background .15s ease, color .15s ease;
+}
+
+.navLinks a:hover{
+  background:rgba(255,255,255,.04);
+  color:rgba(255,255,255,.92);
+}
+
+/* ===== Hero ===== */
+.hero{
+  padding:10px 0 28px;
+}
+
+.hi{
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight:800;
+  letter-spacing:-.02em;
+  margin:6px 0 8px;
+  line-height:1.05;
+}
+
+.hi .accent{ color:var(--accent); }
+
+.subline{
+  font-size: clamp(30px, 3.6vw, 48px);
+  font-weight:800;
+  letter-spacing:-.02em;
+  margin:0 0 8px;
+  line-height:1.05;
+}
+
+.subline2{
+  font-size: clamp(30px, 3.6vw, 48px);
+  font-weight:800;
+  letter-spacing:-.02em;
+  margin:0 0 18px;
+  line-height:1.05;
+  color:rgba(238,240,246,.45);
+}
+
+.smallCopy{
+  max-width:420px;
+  font-size:13.5px;
+  line-height:1.45;
+  color:rgba(238,240,246,.55);
+}
+
+.sectionLabel{
+  margin:34px 0 12px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(238,240,246,.40);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.sectionLabel::before{
+  content:"↓";
+  color:rgba(238,240,246,.35);
+}
+
+/* ===== Cards Grid ===== */
+.grid{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:18px;
+}
+
+.card{
+  position:relative;
+  border-radius:var(--radius);
+  background:var(--card);
+  border:1px solid var(--line);
+  overflow:hidden;
+  transform: translateY(0);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  will-change: transform;
+}
+
+.card:hover{
+  transform: translateY(-2px);
+  border-color:var(--line2);
+  background:#10141b;
+}
+
+.thumb{
+  position:relative;
+  height:340px;
+  background:#0a0c10;
+  overflow:hidden;
+}
+
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter: brightness(.88) contrast(1.03);
+}
+
+/* simple overlay only, no glow/gradient effects */
+.thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.22);
+  pointer-events:none;
+}
+
+.cardBody{
+  padding:14px 14px 12px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  background:var(--card2);
+  border-top:1px solid rgba(255,255,255,.04);
+}
+
+.kicker{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(238,240,246,.45);
+}
+
+.titleRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.cardTitle{
+  font-size:18px;
+  font-weight:800;
+  margin:0;
+  letter-spacing:-.02em;
+}
+
+.desc{
+  margin:0;
+  font-size:13px;
+  line-height:1.45;
+  color:rgba(238,240,246,.55);
+  min-height:2.6em;
+}
+
+.arrow{
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.02);
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.card:hover .arrow{
+  transform: translateX(2px);
+  background:rgba(255,255,255,.05);
+  border-color:rgba(255,255,255,.16);
+}
+
+.videoEmbed{
+  width:100%;
+  max-width:none; 
+  border:1px solid var(--line);
+  border-radius:16px 16px 0 0;
+  overflow:hidden;
+  background:#000;
+}
+
+.videoEmbed iframe{
+  width:100%;
+  height:340px;        
+  aspect-ratio: auto; 
+  display:block;
+  border:0;
+}
+
+.arrow svg{ opacity:.85; }
+
+/* ===== Reveal animations ===== */
+.reveal{
+  opacity:0;
+  transform: translateY(10px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px){
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .thumb{ height:220px; }
+}
+
+@media (max-width: 640px){
+  .navLinks{ gap:10px; }
+  .grid{ grid-template-columns: 1fr; }
+  .thumb{ height:210px; }
+  .smallCopy{ max-width:100%; }
+}
+
+
+.cardBody{ padding:18px 16px 16px; }
+.desc{ min-height:3.2em; }
+
+
+
+/* 1) Don't stretch grid items vertically */
+.grid{
+  align-items: start;
+}
+
+/* 2) Make cards size to content only */
+.card{
+  height: auto !important;
+  align-self: start;
+  display: block; /* if you made it flex somewhere, this resets it */
+}
+
+/* 3) Remove forced text height (this is a common culprit) */
+.desc{
+  min-height: 0 !important;
+}
+
+/* 4) If card body was forcing fill behavior */
+.cardBody{
+  height: auto;
+}

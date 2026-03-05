@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio UI</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>abdulaziz</span>
+        </div>
+
+        <nav class="navLinks">
+          <a href="#work" data-scroll>works</a>
+          <a href="#contact" data-scroll>contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <h1 class="hi reveal">hey, i'm <span class="accent">abdulaziz al-momatten</span></h1>
+        <h2 class="subline reveal">i make stuff sometimes.</h2>
+        <h2 class="subline2 reveal">and sometimes, it's pretty cool!</h2>
+
+        <p class="smallCopy reveal">
+          videos, websites, games, 3d modeling and literally whatever else that catches my interest. here's some of it.
+        </p>
+
+        <div class="sectionLabel" id="work">some things i've worked on</div>
+
+        <div class="grid">
+          <!-- CARD 1: Embedded YouTube video (replaces old YouTube Ad Spot card) -->
+          <div class="card reveal">
+            <div class="videoEmbed">
+              <iframe
+                src="https://youtu.be/ortSE52A7-o?si=HpkWR8c08Q9N_UqN"
+                title="Featured YouTube video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="cardBody">
+              <div class="kicker">video</div>
+              <div class="titleRow">
+                <h3 class="cardTitle">YouTube Video</h3>
+                <a
+                  class="arrow"
+                  href="https://youtu.be/ortSE52A7-o"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open YouTube video"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 7h8v8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+              <p class="desc">
+                i created a short "advertisement". it's not the most polished as i spent maximum 30 minutes on designing and rendering it to see what i can come up with. given the short time span i did it, i'm content with the outcome.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <a class="card reveal" href="#" target="_blank" rel="noreferrer">
+            <div class="thumb">
+              <img
+                src="saudichalets.png"
+                alt="Website project"
+              />
+            </div>
+            <div class="cardBody">
+              <div class="kicker">web</div>
+              <div class="titleRow">
+                <h3 class="cardTitle">SaudiChalets</h3>
+                <div class="arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 7h8v8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+               <p class="desc">
+                    built <strong>SaudiChalets</strong>, a full-stack chalet booking platform for the saudi market (basically a localized vacation rental / chalet reservation system) — for guest bookings, owner property management, and admin/moderation workflows.
+                    <br><br>
+
+                    built it with a production setup using <strong>Next.js</strong> (Pages Router), <strong>React</strong>, <strong>Node.js</strong>, and <strong>MariaDB</strong> (mysql2) with raw SQL + schema-adaptive query handling. it supports <strong>Arabic/English</strong> (rtl/ltr), responsive ui, multi-role permissions, booking lifecycle management, notifications, and ops tooling for real-world use.
+                    <br><br>
+
+                    <strong>key responsibilities &amp; features</strong>
+                    <br><br>
+
+                    • multi-role platform (guest / owner / admin/moderator) with rbac permissions + secure access control
+                    <br>
+                    • property listings + search/filter (city, rating/reviews, facilities) + responsive layouts (mobile + desktop)
+                    <br>
+                    • e-mail authentication using SendGrid
+                    <br>
+                    • Whatsapp notifications and verification using Meta's WhatsApp API
+                    <br>
+                    • advanced pricing modes:
+                    <br>
+                    • fixed package pricing
+                    <br>
+                    • hourly pricing
+                    <br>
+                    • hourly + package overrides
+                    <br>
+                    • default/fallback pricing strategies based on booking rules
+                    <br>
+                    • booking flows:
+                    <br>
+                    • client booking creation
+                    <br>
+                    • owner confirm/decline workflows
+                    <br>
+                    • status lifecycle (pending / confirmed / cancelled)
+                    <br>
+                    • transition-safe handling for legacy/new status columns
+                    <br>
+                    • owner portal:
+                    <br>
+                    • property create/edit
+                    <br>
+                    • image uploads
+                    <br>
+                    • booking settings
+                    <br>
+                    • package pricing management
+                    <br>
+                    • dashboard + calendar views
+                    <br>
+                    • booking detail pages
+                    <br>
+                    • admin panel for ops (users/properties/bookings/reviews/support) + moderation (user disabling, hidden properties)
+                    <br>
+                    • support tickets (user + admin threads) with states, replies, and workflows
+                    <br>
+                    • email verification + password reset via <strong>SendGrid</strong> (secure tokens + expiry)
+                    <br>
+                    • pdf booking/invoice generation using <strong>Puppeteer</strong> + html templates (with arabic font embedding + booking snapshot data)
+                    <br>
+                    • audit logging foundation for key actions (auth, property changes, booking settings updates, etc.) + admin log viewer support
+                    <br>
+                    • localized ui polish across major pages (listings, booking, checkout, owner/admin pages)
+                    <br><br>
+                    <strong>technical highlights</strong><br></br>
+                    • <strong>frontend:</strong> Next.js (Pages Router), React 18, css (scoped styles + responsive layout work)
+                    <br>
+                    • <strong>backend:</strong> Node.js api routes, MariaDB, raw sql (mysql2/promise), parameterized queries, transaction-safe patterns
+                    <br>
+                    • <strong>auth/security:</strong> session-based auth, role/permission checks, route/api protection, schema-adaptive guards, disabled-user enforcement
+                    <br>
+                    • <strong>files/media:</strong> multipart uploads (Formidable), property image storage/management
+                    <br>
+                    • <strong>docs/output:</strong> Puppeteer-generated pdfs with arabic font support + snapshot-based booking records
+                    <br>
+                    • <strong>integrations:</strong> SendGrid, payment workflow groundwork (<strong>Paymob KSA</strong>), <strong>Google Maps</strong> embeds/links
+                    <br>
+                    • <strong>localization:</strong> Arabic/English i18n, locale-aware routing, rtl/ltr handling
+                    </p>
+            </div>
+          </a>
+
+          <!-- CARD 3 -->
+          <a class="card reveal" href="#" target="_blank" rel="noreferrer">
+            <div class="thumb">
+              <img src="./nabh.png" alt="Nabh game screenshot" />
+            </div>
+            <div class="cardBody">
+              <div class="kicker">game dev</div>
+              <div class="titleRow">
+                <h3 class="cardTitle">محمد نبيه محد يصيده</h3>
+                <div class="arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 7h8v8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <p class="desc">
+                i participated in "Nabh", a cybersecurity exhibiton organized by King Faisal University. i solo-developed and created a short interactive video game that allowed visitors to engage with the booth and raise cybersecurity awareness using Unreal Engine 5.
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" style="padding-top:40px">
+        <div class="sectionLabel">contact</div>
+        <p class="smallCopy">
+          email:
+          <a href="mailto:almomattenabdulaziz@gmail.com" style="color:rgba(255,255,255,.9)">
+            almomattenabdulaziz@gmail.com
+          </a>
+          <br />
+          phone number:
+          <a href="tel:+966564933044" style="color:rgba(255,255,255,.9)">
+            +966564933044
+          </a>
+        </p>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
